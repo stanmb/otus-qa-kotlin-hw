@@ -9,15 +9,15 @@ fun main() {
 
 interface TestRunner<T> { fun runTest(steps: T, test: () -> Unit) }
 
-class TestRunnerImplementation<T>: TestRunner<T> {
+class TestRunnerImplementation<T: Any>: TestRunner<T> {
     override fun runTest(steps: T, test: () -> Unit) {
         val listBefore = mutableListOf<Method>()
         val listAfter = mutableListOf<Method>()
-        steps!!::class.java.declaredMethods.forEach {
-            if (it.name.contains("before")) {
+        steps::class.java.declaredMethods.forEach {
+            if (it.name.startsWith("before")) {
                 listBefore.add(it)
             }
-            else if (it.name.contains("after")) {
+            else if (it.name.startsWith("after")) {
                 listAfter.add(it)
             }
         }
