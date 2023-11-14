@@ -17,7 +17,9 @@ class TestRunnerImplementation<T>: TestRunner<T> {
             if (it.name.contains("before")) {
                 listBefore.add(it)
             }
-            else listAfter.add(it)
+            else if (it.name.contains("after")) {
+                listAfter.add(it)
+            }
         }
         // run before methods
         for (method in listBefore) {
