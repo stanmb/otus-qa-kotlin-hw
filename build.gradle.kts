@@ -10,6 +10,7 @@ repositories {
 }
 
 dependencies {
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.9.20")
     testImplementation("org.jetbrains.kotlin:kotlin-test")
 }
 
