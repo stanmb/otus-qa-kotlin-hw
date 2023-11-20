@@ -50,7 +50,7 @@ class BeforeOnlyTestClass {
 
 class EmptyTestClass
 
-// функция расширения для String с именем .log приименяется см выше
+// функция расширения для String с именем .log применяется см выше
 fun String.log() {
     println("-> $this running...")
 }
